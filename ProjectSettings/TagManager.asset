@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - TriggerZone
+  - TeleportZone
   layers:
   - Default
   - TransparentFX

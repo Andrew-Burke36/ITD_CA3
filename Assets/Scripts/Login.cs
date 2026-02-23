@@ -18,7 +18,7 @@ public class DataManager : MonoBehaviour
     private IEnumerator loadScene()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MovementTutorial");
     }
 
     private IEnumerator delay()
