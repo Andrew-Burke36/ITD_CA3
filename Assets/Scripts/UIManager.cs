@@ -3,6 +3,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    [SerializeField] private GameObject Level2UI;
     [SerializeField] private GameObject tutorialCompleteUI;
     
     void Awake()
@@ -19,6 +20,11 @@ public class UIManager : MonoBehaviour
 
     public void EnableCompleteUI()
     {
-        tutorialCompleteUI.SetActive(true);
+        tutorialCompleteUI.SetActive(!tutorialCompleteUI.activeSelf);
+    }
+
+    public void EnableLevel2UI()
+    {
+        tutorialCompleteUI.SetActive(!Level2UI.activeSelf);
     }
 }

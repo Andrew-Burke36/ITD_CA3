@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class TutorialScript : MonoBehaviour
@@ -70,6 +71,7 @@ public class TutorialScript : MonoBehaviour
          // Finishes the trigger zones and enables the first teleport zone
          triggersComplete = true;
          door.SetActive(false);
+         UIManager.Instance.EnableLevel2UI();
          teleportZones[currentTeleportIndex].SetActive(true);
       }
    }
@@ -97,6 +99,11 @@ public class TutorialScript : MonoBehaviour
          Debug.Log("Tutorial completed!");
       }
    }
+
+   private IEnumerator Delay()
+   {
+      yield return new WaitForSeconds(5.67f);
+   }
    
    /// <summary>
    /// This will enable the end of the tutorial UI
@@ -108,5 +115,9 @@ public class TutorialScript : MonoBehaviour
    
       tutorialComplete = true;
       UIManager.Instance.EnableCompleteUI();
+      
+      // load into the next scene
+      StartCoroutine(Delay());
+      SceneManager.LoadScene("CA5");
    }
 }
