@@ -1,16 +1,23 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
 public class AssemblyBehaviour : MonoBehaviour
 {
+    
+    [Header("Sockets")]
     public XRSocketInteractor socketA;
     public XRSocketInteractor socketB;
     public XRSocketInteractor socketC;
 
+    [Header("Final Item")]
     public Transform finalItemLocation;
     public GameObject finalItemPrefab;
 
+    [Header("TP Mat")] 
+    public TeleportationArea teleportMat;
+    
     private bool completed = false;
 
     void Update()
@@ -37,5 +44,8 @@ public class AssemblyBehaviour : MonoBehaviour
 
         // Spawn final item
         Instantiate(finalItemPrefab, finalItemLocation.position, finalItemLocation.rotation);
+        
+        // Enable the teleport mat
+        teleportMat.enabled = true;
     }
 }
