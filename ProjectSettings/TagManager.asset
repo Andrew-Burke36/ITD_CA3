@@ -7,6 +7,12 @@ TagManager:
   - Anchor
   - TriggerZone
   - TeleportZone
+  - Key1
+  - Key2
+  - Key3
+  - Part1
+  - Part2
+  - Part3
   layers:
   - Default
   - TransparentFX

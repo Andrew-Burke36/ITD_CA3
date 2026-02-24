@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject Level2UI;
     [SerializeField] private GameObject tutorialCompleteUI;
     
+    
     void Awake()
     {
         if (Instance == null)
